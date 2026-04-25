@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lankarfr"
+version = "0.1.0"
+description = "Sri Lanka RFR Tool"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas",
+    "scipy",
+    "pdfplumber",
+    "requests",
+    "duckdb",
+    "streamlit",
+    "fastapi",
+    "uvicorn",
+    "pytesseract",
+    "beautifulsoup4",
+    "pydantic",
+    "xlrd",
+    "openpyxl"
+]
+
+[project.scripts]
+lankarfr = "lankarfr.cli:main"
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+]
+
+[tool.setuptools.packages.find]
+include = ["lankarfr*"]
